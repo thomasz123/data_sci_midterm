@@ -14,7 +14,7 @@ import matplotlib.pyplot as plt
 
 st.title("Data Science App")
 
-image_path = Image.open("paris weather pic.jpg")
+image_path = Image.open("cloud.jpg")
 st.image(image_path)
 
 app_page = st.sidebar.selectbox("Select Page", ['Data Exploration', 'Visualization', 'Prediction'])
