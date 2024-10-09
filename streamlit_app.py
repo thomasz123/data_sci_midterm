@@ -10,12 +10,14 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn import metrics
 
+import matplotlib.pyplot as plt
+
 st.title("Data Science App")
 
-# image_path = Image.open("wine.jpeg")
-# st.image(image_path)
+image_path = Image.open("paris weather pic.jpg")
+st.image(image_path)
 
-# app_page = st.sidebar.selectbox("Select Page", ['Data Exploration', 'Visualization', 'Prediction'])
+app_page = st.sidebar.selectbox("Select Page", ['Data Exploration', 'Visualization', 'Prediction'])
 df = pd.read_csv("weather.csv")
 
 df = df.drop("datetime", axis = 1)  
@@ -24,21 +26,34 @@ df = df.drop("datetime", axis = 1)
 df2 = df.drop("temp", axis = 1)
 
 
+if app_page == 'Data Exploration':
+    st.header("Data Exploration")
 
-X = df2
-y = df["temp"]
+if app_page == 'Visualization':
+    st.header("Visualization")
 
-X_train, X_test, y_train, y_test = train_test_split(X,y,test_size = 0.2)
-lr = LinearRegression()
+    #heat Map
+    corr_matrix= df.corr()
+    fig, ax = plt.subplots(figsize=(10, 6))
+    sns.heatmap(corr_matrix, annot=True, cmap='coolwarm', ax=ax, linewidths=0.5)
+    st.pyplot(fig)
 
-lr.fit(X_train, y_train)
+if app_page == 'Prediction':
+    st.header("Prediction")
+    X = df2
+    y = df["temp"]
 
-prediction = lr.predict(X_test)
+    X_train, X_test, y_train, y_test = train_test_split(X,y,test_size = 0.2)
+    lr = LinearRegression()
 
-mae = metrics.mean_absolute_error(prediction, y_test)
-st.write("Mean Absolute Error:", mae)
+    lr.fit(X_train, y_train)
 
-r2 = metrics.r2_score(prediction,y_test)
-st.write("R2:", r2)
+    prediction = lr.predict(X_test)
+
+    mae = metrics.mean_absolute_error(prediction, y_test)
+    st.write("Mean Absolute Error:", mae)
+
+    r2 = metrics.r2_score(prediction,y_test)
+    st.write("R2:", r2)
 
 
