@@ -14,23 +14,23 @@ import matplotlib.pyplot as plt
 
 st.title("Data Science App")
 
-image_path = Image.open("cloud.jpg")
-st.image(image_path)
 
 app_page = st.sidebar.selectbox("Select Page", ['Data Exploration', 'Visualization', 'Prediction'])
 df = pd.read_csv("weather.csv")
 
 df = df.drop("datetime", axis = 1)  
 
-# st.pyplot(sns.pairplot(df))
 df2 = df.drop("temp", axis = 1)
 
 
 if app_page == 'Data Exploration':
     st.header("Data Exploration")
+    image_path = Image.open("cloud.jpg") 
+    st.image(image_path)
 
 if app_page == 'Visualization':
     st.header("Visualization")
+    st.pyplot(sns.pairplot(df))
 
     #heat Map
     corr_matrix= df.corr()
