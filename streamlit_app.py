@@ -20,7 +20,7 @@ df = pd.read_csv("weather.csv")
 
 df = df.drop("datetime", axis = 1)  
 
-st.pyplot(sns.pairplot(df))
+# st.pyplot(sns.pairplot(df))
 df2 = df.drop("temp", axis = 1)
 
 
@@ -40,3 +40,5 @@ st.write("Mean Absolute Error:", mae)
 
 r2 = metrics.r2_score(prediction,y_test)
 st.write("R2:", r2)
+
+
