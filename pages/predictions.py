@@ -96,7 +96,8 @@ with st.spinner('Loading scatterplot...'):
     
     # Correct the axes for the scatter plot
     plt.scatter(x=X1_test, y=y1_test, color='blue', label='Actual')
-    plt.scatter(x=X1_test, y=predictions, color='red', label='Predicted')
+    #plt.scatter(x=X1_test, y=predictions, color='red', label='Predicted')
+    plt.plot([min(y1_test), max(y1_test)], [min(y1_test), max(y1_test)], color='red', linewidth=2)
     
     plt.legend()
     st.pyplot(fig)
