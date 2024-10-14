@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt
 st.title("Tempature :blue[Prediction] ?")
 st.subheader("Weather data and analysis")
 
-st.write('##### WHY THIS TOPIC❓')
+st.markdown('##### WHY THIS TOPIC❓')
 st.markdown('Tempature prediction and understanding tempature patterns are crucial for agriculture, travel, safety, and everyday life. ')
 st.markdown('The increasing unpredictability due to climate change makes precise weather forecasting even more important.')
 
