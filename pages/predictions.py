@@ -62,38 +62,37 @@ with st.spinner('Loading scatterplot...'):
 # plt.show()
 
 #linear regression w variables (not expected vs predicted)
-if app_page == 'Prediction':
 
-    st.title("Predicting Temperature based on Dew")
-    list_columns = df.columns
-    #input_lr = st.multiselect("Select variables:",list_columns,["___", "___"])
+st.title("Predicting Temperature based on Dew")
+list_columns = df.columns
+#input_lr = st.multiselect("Select variables:",list_columns,["___", "___"])
 
-    #df2 = df[input_lr]
+#df2 = df[input_lr]
 
-    # Step 1 splitting the dataset into X and y
-    X= df["dew"]
-    # target variable
-    y= df["temp"]
+# Step 1 splitting the dataset into X and y
+X= df["dew"]
+# target variable
+y= df["temp"]
 
-    # Step 2 splitting into 4 chuncks X_train X_test y_train y_test
-    X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.2)
+# Step 2 splitting into 4 chuncks X_train X_test y_train y_test
+X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.2)
 
-    # Step3 Initialize the LinearRegression
-    lr = LinearRegression()
+# Step3 Initialize the LinearRegression
+lr = LinearRegression()
 
-    # Step4 Train model
-    lr.fit(X_train,y_train)
+# Step4 Train model
+lr.fit(X_train,y_train)
 
-    #Step5 Prediction 
-    predictions = lr.predict(X_test)
+#Step5 Prediction 
+predictions = lr.predict(X_test)
 
 
-    #Stp6 Evaluation
+#Stp6 Evaluation
 
-    mae=metrics.mean_absolute_error(predictions,y_test)
-    r2=metrics.r2_score(predictions,y_test)
+mae=metrics.mean_absolute_error(predictions,y_test)
+r2=metrics.r2_score(predictions,y_test)
 
-    st.write("Mean Absolute Error:",mae)
-    st.write("R2 output:",r2)
+st.write("Mean Absolute Error:",mae)
+st.write("R2 output:",r2)
 
 #Logistic Regression
