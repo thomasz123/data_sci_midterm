@@ -63,40 +63,43 @@ with st.spinner('Loading scatterplot...'):
 # plt.title('Feature Importance (Linear Regression)')
 # plt.show()
 
-#linear regression w variables (not expected vs predicted)
+
+# Assuming you have already loaded the dataframe `df`
+# Example:
+# df = pd.read_csv('your_data.csv')
 
 st.title("Predicting Temperature based on Dew")
 list_columns = df.columns
-#input_lr = st.multiselect("Select variables:",list_columns,["___", "___"])
 
-#df2 = df[input_lr]
+# Step 1: Splitting the dataset into X and y
+X1 = df[["dew"]]  # Use double brackets to make X1 a 2D array
+y1 = df["temp"]
 
-# Step 1 splitting the dataset into X and y
-X1= df["dew"]
-# target variable
-y1= df["temp"]
+# Step 2: Splitting into 4 chunks: X_train, X_test, y_train, y_test
+X1_train, X1_test, y1_train, y1_test = train_test_split(X1, y1, test_size=0.2)
 
-# Step 2 splitting into 4 chuncks X_train X_test y_train y_test
-X1_train, X1_test, y1_train, y1_test = train_test_split(X1,y1,test_size=0.2)
-
-# Step3 Initialize the LinearRegression
+# Step 3: Initialize the LinearRegression model
 lr = LinearRegression()
 
-# Step4 Train model
+# Step 4: Train the model
 lr.fit(X1_train, y1_train)
 
-#Step5 Prediction 
+# Step 5: Predictions
 predictions = lr.predict(X1_test)
 
+# Step 6: Plot the results
 with st.spinner('Loading scatterplot...'):
-    fig, ax = plt.subplots(figsize = (10,6))
-    plt.title("Temperature and Dew",fontsize=25)
-    plt.xlabel("Dew",fontsize=18)
+    fig, ax = plt.subplots(figsize=(10, 6))
+    plt.title("Temperature and Dew", fontsize=25)
+    plt.xlabel("Dew", fontsize=18)
     plt.ylabel("Temp", fontsize=18)
-    plt.scatter(x=y1_test,y=predictions)
-
+    
+    # Correct the axes for the scatter plot
+    plt.scatter(x=X1_test, y=y1_test, color='blue', label='Actual')
+    plt.scatter(x=X1_test, y=predictions, color='red', label='Predicted')
+    
+    plt.legend()
     st.pyplot(fig)
-
 
 #Stp6 Evaluation
 
