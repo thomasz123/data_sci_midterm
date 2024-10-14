@@ -13,6 +13,17 @@ import matplotlib.pyplot as plt
 st.title("Tempature Prediction")
 st.subheader("Weather data and analysis")
 
+image_path = Image.open("cloud.jpg") 
+st.image(image_path)
+
+st.write("Details about our project, explanation of database, etc")
+
+df = pd.read_csv("weather.csv")
+df = df.drop(["datetime","temp"], axis = 1)  
+columns = df.columns
+columns
+
+
 st.markdown('##### WHY THIS TOPIC❓')
 st.markdown('Accurate temperature prediction is critical for weather forecasting, agriculture, and various industries. Understanding the key factors influencing temperature helps in improving prediction accuracy, enhancing decision-making for farmers, city planners, and climate researchers.')
 st.markdown("##### OUR GOAL 🎯")
@@ -29,12 +40,3 @@ st.dataframe(df.describe())
 st.markdown("🔍 **Observation**: The dataset provides a comprehensive set of weather-related features across different regions and dates, offering valuable insights into temperature variations.")
     
 
-image_path = Image.open("cloud.jpg") 
-st.image(image_path)
-
-st.write("Details about our project, explanation of database, etc")
-
-df = pd.read_csv("weather.csv")
-df = df.drop(["datetime","temp"], axis = 1)  
-columns = df.columns
-columns

@@ -46,7 +46,9 @@ with st.spinner('Loading scatterplot...'):
     st.pyplot(fig)
 
 
-# feature_names = [f'Feature_{i}' for i in list(X.columns)]
+# coeff_df = pd.DataFrame(lin_reg.coef_, X.columns, columns=['Coefficient'])
+coeff_df
+feature_names = [f'Feature_{i}' for i in list(X.columns)]
 # df_X = pd.DataFrame(X, columns=feature_names)
 # # Coefficients represent the importance in linear regression
 # coefficients = lin_reg.coef_
