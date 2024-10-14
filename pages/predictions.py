@@ -45,19 +45,35 @@ with st.spinner('Loading scatterplot...'):
 
     st.pyplot(fig)
 
+
+# feature_names = [f'Feature_{i}' for i in list(X.columns)]
+# df_X = pd.DataFrame(X, columns=feature_names)
+# # Coefficients represent the importance in linear regression
+# coefficients = lin_reg.coef_
+
+# # Making the coefficients positive to compare magnitude
+# importance = np.abs(coefficients)
+
+# # Plotting feature importance with feature names
+# plt.figure(figsize=(10, 8))
+# plt.barh(feature_names, importance)
+# plt.xlabel('Absolute Coefficient Value')
+# plt.title('Feature Importance (Linear Regression)')
+# plt.show()
+
 #linear regression w variables (not expected vs predicted)
 if app_page == 'Prediction':
 
     st.title("Predicting Temperature based on Dew")
     list_columns = df.columns
-    input_lr = st.multiselect("Select variables:",list_columns,["temp", "dew"])
+    #input_lr = st.multiselect("Select variables:",list_columns,["___", "___"])
 
-    df2 = df[input_lr]
+    #df2 = df[input_lr]
 
     # Step 1 splitting the dataset into X and y
-    X= df2
+    X= df["dew"]
     # target variable
-    y= df["alcohol"]
+    y= df["temp"]
 
     # Step 2 splitting into 4 chuncks X_train X_test y_train y_test
     X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.2)
@@ -70,6 +86,7 @@ if app_page == 'Prediction':
 
     #Step5 Prediction 
     predictions = lr.predict(X_test)
+
 
     #Stp6 Evaluation
 
