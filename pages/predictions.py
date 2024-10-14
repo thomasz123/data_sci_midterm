@@ -46,22 +46,22 @@ with st.spinner('Loading scatterplot...'):
     st.pyplot(fig)
 
 
-# coeff_df = pd.DataFrame(lin_reg.coef_, X.columns, columns=['Coefficient'])
-# coeff_df
-# feature_names = [f'Feature_{i}' for i in list(X.columns)]
-# df_X = pd.DataFrame(X, columns=feature_names)
-# # Coefficients represent the importance in linear regression
-# coefficients = lin_reg.coef_
+coeff_df = pd.DataFrame(lin_reg.coef_, X.columns, columns=['Coefficient'])
+coeff_df
+feature_names = [f'Feature_{i}' for i in list(X.columns)]
+df_X = pd.DataFrame(X, columns=feature_names)
+# Coefficients represent the importance in linear regression
+coefficients = lin_reg.coef_
 
-# # Making the coefficients positive to compare magnitude
-# importance = np.abs(coefficients)
+# Making the coefficients positive to compare magnitude
+importance = np.abs(coefficients)
 
-# # Plotting feature importance with feature names
-# plt.figure(figsize=(10, 8))
-# plt.barh(feature_names, importance)
-# plt.xlabel('Absolute Coefficient Value')
-# plt.title('Feature Importance (Linear Regression)')
-# plt.show()
+# Plotting feature importance with feature names
+plt.figure(figsize=(10, 8))
+plt.barh(feature_names, importance)
+plt.xlabel('Absolute Coefficient Value')
+plt.title('Feature Importance (Linear Regression)')
+plt.show()
 
 #Linear Regression (Temp vs. Dew)
 st.title("Predicting Temperature based on Dew")
@@ -92,8 +92,7 @@ with st.spinner('Loading scatterplot...'):
     
     # Correct the axes for the scatter plot
     plt.scatter(x=X1_test, y=y1_test, color='blue', label='Actual')
-    #plt.scatter(x=X1_test, y=predictions, color='red', label='Predicted')
-    plt.plot([min(X1_test), max(X1_test)], [min(y1_test), max(y1_test)], color='red', linewidth=2)
+    plt.scatter(x=X1_test, y=predictions, color='red', label='Predicted')
     
     plt.legend()
     st.pyplot(fig)
