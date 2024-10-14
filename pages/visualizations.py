@@ -11,7 +11,8 @@ from sklearn import metrics
 import matplotlib.pyplot as plt
 
 df = pd.read_csv("weather.csv")
-df_cleaned = df.drop(["temp", "datetime"], axis = 1)
+df = df.drop("datetime", axis = 1)
+df_cleaned = df.drop("temp", axis = 1)
 
 st.title("Visualization")
 
@@ -22,10 +23,14 @@ with st.spinner('Loading visualization charts. Please wait...'):
 
     #heatmap
     st.header('Heatmap')
-    corr_matrix= df_cleaned.corr()
+    corr_matrix= df.corr()
     fig, ax = plt.subplots(figsize=(10, 6))
     sns.heatmap(corr_matrix, annot=True, cmap='coolwarm', ax=ax, linewidths=0.5)
     st.pyplot(fig)
+
+    #scatterplot
+    st.header("Scatterplot")
+    #sns.scatterplot(data = df, x = "", y = "Temperature Forecast", hue = "Category")
 # st.success("Done!")
 
 
