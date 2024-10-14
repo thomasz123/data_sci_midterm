@@ -19,7 +19,7 @@ st.title("Visualization")
 with st.spinner('Loading visualization charts. Please wait...'):
     #pairplot
     st.header('Pairplot')
-    st.pyplot(sns.pairplot(df_cleaned))
+    st.pyplot(sns.pairplot(df))
 
     #heatmap
     st.header('Heatmap')
