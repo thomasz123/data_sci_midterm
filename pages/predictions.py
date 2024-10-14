@@ -70,16 +70,27 @@ predictions = lr.predict(X1_test)
 
 # Step 6: Plot the results
 with st.spinner('Loading scatterplot...'):
-    fig, ax = plt.subplots(figsize=(10, 6))
-    plt.title("Temperature and Dew", fontsize=25)
-    plt.xlabel("Dew", fontsize=18)
-    plt.ylabel("Temp", fontsize=18)
+    # fig, ax = plt.subplots(figsize=(10, 6))
+    # plt.title("Temperature and Dew", fontsize=25)
+    # plt.xlabel("Dew", fontsize=18)
+    # plt.ylabel("Temp", fontsize=18)
     
-    # Correct the axes for the scatter plot
-    plt.scatter(x=X1_test, y=y1_test, color='blue', label='Actual')
-    plt.scatter(x=X1_test, y=predictions, color='red', label='Predicted')
+    # # Correct the axes for the scatter plot
+    # plt.scatter(x=X1_test, y=y1_test, color='blue', label='Actual')
+    # #plt.scatter(x=X1_test, y=predictions, color='red', label='Predicted')
+    # plt.plot([min(y_test), max(y_test)], [min(y_test), max(y_test)], color='red', linewidth=2)
     
-    plt.legend()
+    # plt.legend()
+    
+
+    plt.figure(figsize=(8, 6))
+    plt.scatter(y_test, predictions)
+    plt.plot([min(y_test), max(y_test)], [min(y_test), max(y_test)], color='red', linewidth=2)
+    plt.xlabel('Actual CO2 Emissions')
+    plt.ylabel('Predicted CO2 Emissions')
+    plt.title('Actual vs Predicted CO2 Emissions')
+    plt.show()
+    
     st.pyplot(fig)
 
 #Ranking variables
