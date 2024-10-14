@@ -74,25 +74,28 @@ list_columns = df.columns
 # Step 1 splitting the dataset into X and y
 X1= df["dew"]
 # target variable
-y= df["temp"]
+y1= df["temp"]
 
 # Step 2 splitting into 4 chuncks X_train X_test y_train y_test
-X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.2)
+X1_train, X1_test, y1_train, y1_test = train_test_split(X1,y1,test_size=0.2)
 
 # Step3 Initialize the LinearRegression
 lr = LinearRegression()
 
 # Step4 Train model
-lr.fit(X_train,y_train)
+lr.fit(X1_train,y1_train)
 
 #Step5 Prediction 
-predictions = lr.predict(X_test)
+predictions = lr.predict(X1_test)
 
-# Plot the original data points
-plt.scatter(x, y, label='Data points')
+with st.spinner('Loading scatterplot...'):
+    fig, ax = plt.subplots(figsize = (10,6))
+    plt.title("Temperature and Dew",fontsize=25)
+    plt.xlabel("Dew",fontsize=18)
+    plt.ylabel("Temp", fontsize=18)
+    plt.scatter(x=y1_test,y=predictions)
 
-# Plot the linear regression line
-plt.plot(x, predictions, label='Regression line')
+    st.pyplot(fig)
 
 
 #Stp6 Evaluation
