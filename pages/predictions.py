@@ -48,9 +48,9 @@ with st.spinner('Loading scatterplot...'):
 #linear regression w variables (not expected vs predicted)
 if app_page == 'Prediction':
 
-    st.title("Predicting temperature based on _____")
+    st.title("Predicting Temperature based on Dew")
     list_columns = df.columns
-    input_lr = st.multiselect("Select variables:",list_columns,["Temperature", "_______"])
+    input_lr = st.multiselect("Select variables:",list_columns,["temp", "dew"])
 
     df2 = df[input_lr]
 

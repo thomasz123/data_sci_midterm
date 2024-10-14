@@ -30,7 +30,7 @@ with st.spinner('Loading visualization charts. Please wait...'):
 
     #scatterplot
     st.header("Scatterplot")
-    sns.scatterplot(data = df, x = "", y = "Temperature Forecast", hue = "Category")
+    sns.scatterplot(data = df, x = "dew", y = "temp")
 # st.success("Done!")
 
 

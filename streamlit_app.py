@@ -10,13 +10,13 @@ from sklearn.linear_model import LinearRegression
 from sklearn import metrics
 import matplotlib.pyplot as plt
 
-st.title("Tempature :blue[Prediction] ?")
+st.title("Tempature :blue[Prediction]")
 st.subheader("Weather data and analysis")
 
 st.markdown('##### WHY THIS TOPIC❓')
-st.markdown('Tempature prediction and understanding tempature patterns are crucial for agriculture, travel, safety, and everyday life. ')
-st.markdown('The increasing unpredictability due to climate change makes precise weather forecasting even more important.')
-
+st.markdown('Tempature prediction and understanding tempature patterns are crucial for agriculture, travel, safety, and everyday life. The increasing unpredictability due to climate change makes precise weather forecasting even more important.')
+st.markdown("##### OUR GOAL 🎯")
+st.markdown("With this project, we aim to predict tempature  ")
 
 image_path = Image.open("cloud.jpg") 
 st.image(image_path)
