@@ -10,7 +10,7 @@ from sklearn.linear_model import LinearRegression
 from sklearn import metrics
 import matplotlib.pyplot as plt
 
-st.title("Tempature Prediction")
+st.title(":blue[Tempature Prediction]")
 st.subheader("Weather data and analysis")
 
 image_path = Image.open("cloud.jpg") 
@@ -41,8 +41,6 @@ st.markdown("- SEA LEVEL PRESSURE: The atmospheric pressure at sea level. It's a
 st.markdown("- SOLAR RADIATION: The amount of solar energy hitting the Earth’s surface.")
 
 st.markdown("### Description of Data")
-df = pd.read_csv("weather_data.csv")
-st.dataframe(df.describe())
-st.markdown("🔍 **Observation**: The dataset provides a comprehensive set of weather-related features across different regions and dates, offering valuable insights into temperature variations.")
+
     
 

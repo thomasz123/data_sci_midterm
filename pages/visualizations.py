@@ -30,7 +30,9 @@ with st.spinner('Loading visualization charts. Please wait...'):
 
     #scatterplot
     st.header("Scatterplot")
-    st.pyplot(sns.scatterplot(data = df, x = "dew", y = "temp"))
+    fig, ax = plt.subplots(figsize=(10, 6))
+    sns.scatterplot(data = df, x = "dew", y = "temp")
+    st.pyplot(sns.scatterplot(fig)
 
     #histogram
     st.header("Histogram")

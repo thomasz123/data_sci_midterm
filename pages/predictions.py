@@ -83,7 +83,7 @@ X1_train, X1_test, y1_train, y1_test = train_test_split(X1,y1,test_size=0.2)
 lr = LinearRegression()
 
 # Step4 Train model
-lr.fit(X1_train,y1_train)
+lr.fit(X1_train, y1_train)
 
 #Step5 Prediction 
 predictions = lr.predict(X1_test)
