@@ -30,6 +30,7 @@ st.markdown("##### OUR GOAL 🎯")
 st.markdown("Our goal is to predict the temperature using multiple meteorological features and identify the most influential factors driving temperature changes. We focus on weather-related features like humidity, wind speed, pressure, and more, while aiming for an accurate forecast model.")
 
 st.markdown('##### OUR DATA 📊')
+st.markdown("Our dataset contains historical weather data including variables such as temperature, humidity, wind speed, and atmospheric pressure. The dataset consists of thousands of daily observations from multiple weather stations.")
 
 st.markdown("##### Explanation of KEY VARIABLES 📓")
 st.markdown("- HUMIDITY: The amount of water vapor in the air.")

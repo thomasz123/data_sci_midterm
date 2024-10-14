@@ -63,11 +63,7 @@ with st.spinner('Loading scatterplot...'):
 # plt.title('Feature Importance (Linear Regression)')
 # plt.show()
 
-
-# Assuming you have already loaded the dataframe `df`
-# Example:
-# df = pd.read_csv('your_data.csv')
-
+#Linear Regression (Temp vs. Dew)
 st.title("Predicting Temperature based on Dew")
 list_columns = df.columns
 
@@ -97,7 +93,7 @@ with st.spinner('Loading scatterplot...'):
     # Correct the axes for the scatter plot
     plt.scatter(x=X1_test, y=y1_test, color='blue', label='Actual')
     #plt.scatter(x=X1_test, y=predictions, color='red', label='Predicted')
-    plt.plot([min(y1_test), max(y1_test)], [min(y1_test), max(y1_test)], color='red', linewidth=2)
+    plt.plot([min(X1_test), max(X1_test)], [min(y1_test), max(y1_test)], color='red', linewidth=2)
     
     plt.legend()
     st.pyplot(fig)

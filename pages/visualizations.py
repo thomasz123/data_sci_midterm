@@ -37,7 +37,7 @@ with st.spinner('Loading visualization charts. Please wait...'):
     #histogram
     st.header("Histogram")
     fig, ax = plt.subplots(figsize=(10, 6))
-    st.pyplot(sns.histplot(df['temp'], kde=True))
+    sns.histplot(df['temp'], kde=True)
     st.pyplot(fig)
     # plt.title("Distribution of Temperatures")
 # st.success("Done!")
