@@ -47,8 +47,8 @@ with st.spinner('Loading scatterplot...'):
 
 
 # coeff_df = pd.DataFrame(lin_reg.coef_, X.columns, columns=['Coefficient'])
-coeff_df
-feature_names = [f'Feature_{i}' for i in list(X.columns)]
+# coeff_df
+# feature_names = [f'Feature_{i}' for i in list(X.columns)]
 # df_X = pd.DataFrame(X, columns=feature_names)
 # # Coefficients represent the importance in linear regression
 # coefficients = lin_reg.coef_
@@ -87,6 +87,12 @@ lr.fit(X_train,y_train)
 
 #Step5 Prediction 
 predictions = lr.predict(X_test)
+
+# Plot the original data points
+plt.scatter(x, y, label='Data points')
+
+# Plot the linear regression line
+plt.plot(x, predictions, label='Regression line')
 
 
 #Stp6 Evaluation

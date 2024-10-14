@@ -33,6 +33,15 @@ st.markdown("We focus on weather-related features like humidity, wind speed, pre
 st.markdown('##### OUR DATA 📊')
 
 st.markdown("##### Explanation of KEY VARIABLES 📓")
+st.markdown("- HUMIDITY: The amount of water vapor in the air.")
+st.markdown("- WIND_SPEED: Speed of the wind at a particular time.")
+st.markdown("- PRESSURE: Atmospheric pressure.")
+st.markdown("- CLOUD_COVER: Percentage of the sky covered by clouds.")
+st.markdown("- P: Percentage of the sky covered by clouds.")
+st.markdown("- SEA LEVEL PRESSURE: Percentage of the sky covered by clouds.")
+st.markdown("- SOLAR_RADIATION: The amount of solar energy hitting the Earth’s surface.
+sealevelpressure
+")
 
 st.markdown("### Description of Data")
 df = pd.read_csv("weather_data.csv")

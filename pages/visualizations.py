@@ -30,11 +30,11 @@ with st.spinner('Loading visualization charts. Please wait...'):
 
     #scatterplot
     st.header("Scatterplot")
-    sns.scatterplot(data = df, x = "dew", y = "temp")
+    st.pyplot(sns.scatterplot(data = df, x = "dew", y = "temp"))
 
     #histogram
     st.header("Histogram")
-    sns.histplot(df['temp'], kde=True)
+    st.pyplot(sns.histplot(df['temp'], kde=True))
     plt.title("Distribution of Temperatures")
 # st.success("Done!")
 
