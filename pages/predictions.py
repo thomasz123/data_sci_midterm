@@ -10,16 +10,15 @@ from sklearn.linear_model import LinearRegression
 from sklearn import metrics
 import matplotlib.pyplot as plt
 
-
 df = pd.read_csv("weather.csv")
 df = df.drop(["datetime"], axis = 1)  
-columns = df.columns
 
 df2 = df.drop("temp", axis = 1)
+columns = df2.columns
 input = st.multiselect("Select variables:",columns,["dew"])
 df2 = df2[input]
 
-st.header("Prediction")
+st.title("Prediction")
 X = df2
 y = df["temp"]
 

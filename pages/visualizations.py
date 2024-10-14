@@ -14,13 +14,15 @@ import time
 df = pd.read_csv("weather.csv")
 df_cleaned = df.drop(["temp", "datetime"], axis = 1)
 
-st.header("Visualization")
+st.title("Visualization")
 
-with st.spinner('Loading visualization charts...'):
+with st.spinner('Loading visualization charts. Please wait...'):
     #pairplot
+    st.header('Pairplot')
     st.pyplot(sns.pairplot(df_cleaned))
 
     #heatmap
+    st.header('Heatmap')
     corr_matrix= df_cleaned.corr()
     fig, ax = plt.subplots(figsize=(10, 6))
     sns.heatmap(corr_matrix, annot=True, cmap='coolwarm', ax=ax, linewidths=0.5)
