@@ -72,7 +72,7 @@ list_columns = df.columns
 #df2 = df[input_lr]
 
 # Step 1 splitting the dataset into X and y
-X= df["dew"]
+X1= df["dew"]
 # target variable
 y= df["temp"]
 

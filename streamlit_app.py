@@ -37,11 +37,9 @@ st.markdown("- HUMIDITY: The amount of water vapor in the air.")
 st.markdown("- WIND_SPEED: Speed of the wind at a particular time.")
 st.markdown("- PRESSURE: Atmospheric pressure.")
 st.markdown("- CLOUD_COVER: Percentage of the sky covered by clouds.")
-st.markdown("- P: Percentage of the sky covered by clouds.")
-st.markdown("- SEA LEVEL PRESSURE: Percentage of the sky covered by clouds.")
-st.markdown("- SOLAR_RADIATION: The amount of solar energy hitting the Earth’s surface.
-sealevelpressure
-")
+st.markdown("- PRECIPITATION: The amount of liquid or frozen water that falls to the Earth's surface, measured over a specific period. It includes rain, snow, sleet, and hail.")
+st.markdown("- SEA_LEVEL_PRESSURE: The atmospheric pressure at sea level. It's a standardized measure used in meteorology to compare pressures from different elevations and is crucial for understanding weather patterns and forecasting.")
+st.markdown("- SOLAR_RADIATION: The amount of solar energy hitting the Earth’s surface.")
 
 st.markdown("### Description of Data")
 df = pd.read_csv("weather_data.csv")
