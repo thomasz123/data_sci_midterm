@@ -9,7 +9,6 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn import metrics
 import matplotlib.pyplot as plt
-import time
 
 df = pd.read_csv("weather.csv")
 df_cleaned = df.drop(["temp", "datetime"], axis = 1)
