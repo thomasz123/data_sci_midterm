@@ -18,7 +18,7 @@ columns = df2.columns
 input = st.multiselect("Select variables:",columns,["dew"])
 df2 = df2[input]
 
-st.title("Prediction")
+st.title("Predictions")
 X = df2
 y = df["temp"]
 
