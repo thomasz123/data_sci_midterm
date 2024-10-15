@@ -29,6 +29,7 @@ def heatmap():
     fig, ax = plt.subplots(figsize=(10, 6))
     sns.heatmap(corr_matrix, annot=True, cmap='coolwarm', ax=ax, linewidths=0.5)
     st.pyplot(fig)
+    #return fig
 
 @st.cache_data
 def histogram():
@@ -40,12 +41,12 @@ def histogram():
 with tab1: #pairplot
     with st.spinner("Loading visualizations..."):
         st.header('Pairplot')
-        st.write(pairplot())
+        pairplot()
 
 with tab2: #heatmap
     with st.spinner("Loading visualizations..."):
         st.header('Heatmap')
-        st.write(heatmap())
+        heatmap()
 
 with tab3: #scatterplot
     st.header("Scatterplot")
@@ -56,7 +57,7 @@ with tab3: #scatterplot
 
 with tab4: #histogram
     st.header("Histogram")
-    st.write(histogram())
+    histogram()
 
 
 
