@@ -58,6 +58,7 @@ with tab3: #scatterplot
 with tab4: #histogram
     st.header("Histogram")
     histogram()
+    
 
 
 
