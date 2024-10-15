@@ -1,4 +1,4 @@
-# 🎈Weather Prediction
+# ⛅️ Weather Prediction
 
 A simple app that can be utilized to predict the temperature in Paris. 
 
