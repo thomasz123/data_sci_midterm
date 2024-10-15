@@ -15,5 +15,5 @@ A simple app that can be utilized to predict the temperature in Paris.
 2. Run the app
 
    ```
-   $ streamlit run streamlit_app.py
+   $ streamlit run app.py
    ```
