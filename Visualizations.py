@@ -14,7 +14,7 @@ df = pd.read_csv("weather.csv")
 df = df.drop("datetime", axis = 1)
 df_cleaned = df.drop("temp", axis = 1)
 
-st.title("Visualizations")
+st.title(":blue[Visualizations]")
 
 tab1, tab2, tab3, tab4= st.tabs(["Pairplot", "Correlation Heatmap", "Scatterplot", "Histogram"])
 
