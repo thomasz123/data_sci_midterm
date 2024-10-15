@@ -14,6 +14,17 @@ import matplotlib.pyplot as plt
 # visualizations = st.Page("Visualizations.py", title="Visualizations ", icon="📊")
 # predictions = st.Page("Predictions.py", title="Predictions", icon="🤖")
 
+df = pd.read_csv("weather.csv")
+df = df.drop("datetime", axis = 1)
+df_cleaned = df.drop("temp", axis = 1)
+cols = df_cleaned.columns
+
+st.header("Scatterplot")
+variable = st.radio("Pick one", cols)
+fig, ax = plt.subplots(figsize=(10, 6))
+sns.scatterplot(data = df, x = variable, y = "temp")
+st.pyplot(fig)
+
 with st.spinner('Loading page...'):
     st.title(":blue[Tempature Prediction]")
     st.subheader("Weather data and analysis")
