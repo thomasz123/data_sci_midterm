@@ -41,9 +41,34 @@ with st.spinner('Loading page...'):
 
     st.markdown("### Description of Data")
 
-    df.describe()
-    st.markdown("This description of the data gives us more information about ")
+    st.dataframe(df.describe())
+    st.markdown("This statistical description gives us more information about the data.")
 
-    columns = df.columns
-    columns
+    st.markdown("### Missing Values")
+    st.markdown("Null or NaN values.")
+
+    dfnull = df.isnull().sum()/len(df)*100
+    totalmiss = dfnull.sum().round(2)
+    st.write("Percentage of total missing values:",totalmiss)
+    st.write(dfnull)
+    if totalmiss == 0.0:
+        st.success("✅ We do not exprience any missing values which is the ideal outcome of our data. We can proceed with higher accuracy in our further prediction.")
+    else:
+        st.warning("Poor data quality due to greater than 30 percent of missing value.")
+        st.markdown(" > Theoretically, 25 to 30 percent is the maximum missing values are allowed, there's no hard and fast rule to decide this threshold. It can vary from problem to problem.")
+
+    st.markdown("### Completeness")
+    st.markdown(" The ratio of non-missing values to total records in dataset and how comprehensive the data is.")
+
+    st.write("Total data length:", len(df))
+    nonmissing = (df.notnull().sum().round(2))
+    completeness= round(sum(nonmissing)/len(df),2)
+
+    st.write("Completeness ratio:",completeness)
+    st.write(nonmissing)
+    if completeness >= 0.80:
+        st.success("✅ We have completeness ratio greater than 0.85, which is good. It shows that the vast majority of the data is available for us to use and analyze. ")
+    else:
+        st.success("Poor data quality due to low completeness ratio (less than 0.85).")
+
 
