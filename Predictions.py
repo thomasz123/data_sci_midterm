@@ -117,13 +117,13 @@ with tab1:
 
     # #Stp6 Evaluation
 
-    # mae=metrics.mean_absolute_error(predictions,y_test)
-    # r2=metrics.r2_score(predictions,y_test)
+    mae=metrics.mean_absolute_error(predictions,y1_test)
+    r2=metrics.r2_score(predictions,y1_test)
 
-    # st.write("Mean Absolute Error:",mae)
-    # st.write("R2 output:",r2)
+    st.write("Mean Absolute Error:",mae)
+    st.write("R2 output:",r2)
 
-    # #Logistic Regression
+    #Logistic Regression
 
 with tab2: 
     df_logistic = df 
