@@ -21,8 +21,6 @@ with st.spinner('Loading page...'):
 
     df = pd.read_csv("weather.csv")
     df = df.drop(["datetime","temp"], axis = 1)  
-    columns = df.columns
-    columns
 
     st.markdown('##### WHY THIS TOPIC❓')
     st.markdown('Accurate temperature prediction is critical for weather forecasting, agriculture, and various industries. Understanding the key factors influencing temperature helps in improving prediction accuracy, enhancing decision-making for farmers, city planners, and climate researchers.')
@@ -43,4 +41,9 @@ with st.spinner('Loading page...'):
 
     st.markdown("### Description of Data")
 
+    df.describe()
+    st.markdown("This description of the data gives us more information about ")
+
+    columns = df.columns
+    columns
 
