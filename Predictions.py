@@ -21,7 +21,7 @@ with tab1:
     input = st.multiselect("Select variables:",columns,["dew"])
     df2 = df2[input]
 
-    st.title(":blue[Predictions]", divider='rainbow')
+    st.title(":blue[Predictions]")
     X = df.drop("temp", axis = 1)
     y = df["temp"]
 
