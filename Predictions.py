@@ -6,7 +6,7 @@ from PIL import Image
 import codecs
 import streamlit.components.v1 as components
 from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LinearRegression
+from sklearn.linear_model import LinearRegression, LogisticRegression
 from sklearn import metrics
 import matplotlib.pyplot as plt
 
@@ -21,7 +21,7 @@ with tab1:
     input = st.multiselect("Select variables:",columns,["dew"])
     df2 = df2[input]
 
-    st.title(":blue[Predictions]")
+    st.title(":blue[Predictions]", divider='rainbow')
     X = df.drop("temp", axis = 1)
     y = df["temp"]
 
@@ -127,14 +127,19 @@ with tab1:
 
 with tab2: 
     df_logistic = df 
-
-    # df_logistic["precipitation"] = df_logistic["precip"]
-    # df_logistic
-
-    # for num in df["precipitation"]: 
-    #     if 
-
     df_logistic['precipitation'] = df_logistic['precip'].apply(lambda x: 1 if x > 0 else 0)
-
-    df
     
+    #st.pyplot create a countplot to count the number of rainy and non rainy days
+
+    X = df.drop(["precipitation", "precip"], axis = 1)
+    y = df["precipitation"]
+
+    X_train, X_test, y_train, y_test = train_test_split(X,y, test_size=0.2)
+
+    logmodel = LogisticRegression()
+    logmodel.fit(X_train, y_train)
+    prediction = logmodel.predict(X_test)
+    
+    # Scatter plot for the data points, color-coded by class
+    plt.scatter(X_train[y_train == 0][:, 0], X_train[y_train == 0][:, 1], color='cyan', label='Y = 0')
+    plt.scatter(X_train[y_train == 1][:, 0], X_train[y_train == 1][:, 1], color='purple', label='Y = 1')

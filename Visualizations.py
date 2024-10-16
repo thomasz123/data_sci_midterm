@@ -15,7 +15,7 @@ df = df.drop("datetime", axis = 1)
 df_cleaned = df.drop("temp", axis = 1)
 cols = df_cleaned.columns
 
-st.title(":blue[Visualizations]")
+st.title(":blue[Visualizations]", divider='rainbow')
 
 tab1, tab2, tab3, tab4= st.tabs(["Pairplot", "Correlation Heatmap", "Scatterplot", "Histogram"])
 
@@ -42,13 +42,14 @@ with tab1: #pairplot
     with st.spinner("Loading visualizations..."):
         st.header('Pairplot')
         pairplot()
-        st.markdown("This pairplot ")
+        st.markdown("This pairplot shows the scatterplot between any two variables")
 
 
 with tab2: #heatmap
     with st.spinner("Loading visualizations..."):
         st.header('Heatmap')
         heatmap()
+        st.markdown("The heatmap shows the correlation value between any variables. The closer the value is to 1, the greater the correlation, and if the value is negative, the correlation is negative. We can see that dew and temperature have a correlation of 0.87, while humidiy and solar radiation have a correlation of -0.7.")
 
 with tab3: #scatterplot
     st.header("Scatterplot")
@@ -56,11 +57,12 @@ with tab3: #scatterplot
     fig, ax = plt.subplots(figsize=(10, 6))
     sns.scatterplot(data = df, x = variable, y = "temp")
     st.pyplot(fig)
+    st.markdown("You can choose a variable to see its scatterplot with temperature. We can see from the scatterplot if there's any semblance of correlation between the variable and temperature.")
 
 with tab4: #histogram
     st.header("Histogram")
     histogram()
-    st.markdown("This histogram ")
+    st.markdown("This histogram shows the distribution of temperature data, and shows us the number of observations for each bin of temperatures. The distribution is made more obvious by the KDE curve. The distribution seems to be mostly symmetrical in a bell curve and unimodal, with a slight skew right.")
 
 
 
