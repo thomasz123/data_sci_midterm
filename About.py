@@ -43,12 +43,12 @@ with st.spinner('Loading page...'):
 
     st.dataframe(df.describe())
     st.markdown("This statistical description gives us more information about the count, mean, standard deviation, minimum, percentiles, and Maximum.")
-    st.markdown("Count: All features have 1,000 data points.")
-    st.markdown("Mean: The average value for each feature, e.g., the average humidity is 71.9969, and the average sea-level pressure is 1,016.4357.")
-    st.markdown("Standard Deviation (std): It indicates the spread of data around the mean. Higher values mean more variability. For example, solar radiation has a standard deviation of 45.73.")
-    st.markdown("Minimum: The lowest recorded value in each feature. For example, the minimum wind speed is 3.5, and cloud cover is 0.")
-    st.markdown("Percentiles: These values show the distribution of data. For example, 50 percent of humidity values are below 73.5, and 75 percent of solar radiation values are below 81.95.")
-    st.markdown("Maximum: The highest recorded value for each feature. For example, the maximum wind speed is 25.3.")
+    st.markdown(":blue[Count]: All features have 1,000 data points.")
+    st.markdown(":blue[Mean]: The average value for each feature, e.g., the average humidity is 71.9969, and the average sea-level pressure is 1,016.4357.")
+    st.markdown(":blue[Standard Deviation (std)]: It indicates the spread of data around the mean. Higher values mean more variability. For example, solar radiation has a standard deviation of 45.73.")
+    st.markdown(":blue[Minimum]: The lowest recorded value in each feature. For example, the minimum wind speed is 3.5, and cloud cover is 0.")
+    st.markdown(":blue[Percentiles]: These values show the distribution of data. For example, 50 percent of humidity values are below 73.5, and 75 percent of solar radiation values are below 81.95.")
+    st.markdown(":blue[Maximum]: The highest recorded value for each feature. For example, the maximum wind speed is 25.3.")
 
     st.markdown("### Missing Values")
     st.markdown("Null or NaN values.")
