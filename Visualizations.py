@@ -56,7 +56,7 @@ with tab3: #pairplot
     with st.spinner("Loading visualizations..."):
         st.header('Pairplot')
         pairplot()
-        st.markdown("This pairplot shows the scatterplot between any two variables")
+        st.markdown("This pairplot shows the scatterplot between any two variables. We get a more full idea of the correlations between certain variables.  The diagonal shows the countplot for that variable, and shows the distribution of the data for that variable.")
 
 
 with tab4: #heatmap
