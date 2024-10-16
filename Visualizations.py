@@ -42,6 +42,8 @@ with tab1: #pairplot
     with st.spinner("Loading visualizations..."):
         st.header('Pairplot')
         pairplot()
+        st.markdown("This pairplot ")
+
 
 with tab2: #heatmap
     with st.spinner("Loading visualizations..."):

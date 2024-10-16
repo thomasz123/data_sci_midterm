@@ -12,7 +12,7 @@ import matplotlib.pyplot as plt
 
 with st.spinner('Loading page...'):
     st.title(":blue[Tempature Prediction]")
-    st.subheader("Weather data and analysis")
+    st.subheader("Weather data and analysis", divider='rainbow')
 
     image_path = Image.open("cloud.jpg") 
     st.image(image_path)

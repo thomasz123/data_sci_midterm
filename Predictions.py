@@ -97,33 +97,44 @@ with tab1:
         st.pyplot(fig)
 
     #Ranking variables
-    coeff_df = pd.DataFrame(lr.coef_, X.columns, columns=['Coefficient'])
-    coeff_df
-    feature_names = [f'Feature_{i}' for i in list(X.columns)]
-    df_X = pd.DataFrame(X, columns=feature_names)
-    # Coefficients represent the importance in linear regression
-    coefficients = lr.coef_
+    # coeff_df = pd.DataFrame(lr.coef_, X.columns, columns=['Coefficient'])
+    # coeff_df
+    # feature_names = [f'Feature_{i}' for i in list(X.columns)]
+    # df_X = pd.DataFrame(X, columns=feature_names)
+    # # Coefficients represent the importance in linear regression
+    # coefficients = lr.coef_
 
-    # Making the coefficients positive to compare magnitude
-    importance = np.abs(coefficients)
+    # # Making the coefficients positive to compare magnitude
+    # importance = np.abs(coefficients)
 
-    # Plotting feature importance with feature names
-    plt.figure(figsize=(10, 8))
-    plt.barh(feature_names, importance)
-    plt.xlabel('Absolute Coefficient Value')
-    plt.title('Feature Importance (Linear Regression)')
-    plt.show()
+    # # Plotting feature importance with feature names
+    # plt.figure(figsize=(10, 8))
+    # plt.barh(feature_names, importance)
+    # plt.xlabel('Absolute Coefficient Value')
+    # plt.title('Feature Importance (Linear Regression)')
+    # plt.show()
 
 
-    #Stp6 Evaluation
+    # #Stp6 Evaluation
 
-    mae=metrics.mean_absolute_error(predictions,y_test)
-    r2=metrics.r2_score(predictions,y_test)
+    # mae=metrics.mean_absolute_error(predictions,y_test)
+    # r2=metrics.r2_score(predictions,y_test)
 
-    st.write("Mean Absolute Error:",mae)
-    st.write("R2 output:",r2)
+    # st.write("Mean Absolute Error:",mae)
+    # st.write("R2 output:",r2)
 
-    #Logistic Regression
+    # #Logistic Regression
 
 with tab2: 
-    st.write("stuff")
+    df_logistic = df 
+
+    # df_logistic["precipitation"] = df_logistic["precip"]
+    # df_logistic
+
+    # for num in df["precipitation"]: 
+    #     if 
+
+    df_logistic['precipitation'] = df_logistic['precip'].apply(lambda x: 1 if x > 0 else 0)
+
+    df
+    
