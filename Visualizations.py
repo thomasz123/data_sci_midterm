@@ -17,7 +17,7 @@ cols = df_cleaned.columns
 
 st.title(":blue[Visualizations]")
 
-tab3, tab4, tab2, tab1= st.tabs(["Histogram", "Scatterplot", "Pairplot", "Correlation Heatmap"])
+tab1, tab2, tab3, tab4= st.tabs(["Histogram", "Scatterplot", "Pairplot", "Correlation Heatmap"])
 
 @st.cache_data 
 def pairplot():
