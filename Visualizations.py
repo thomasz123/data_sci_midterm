@@ -15,7 +15,7 @@ df = df.drop("datetime", axis = 1)
 df_cleaned = df.drop("temp", axis = 1)
 cols = df_cleaned.columns
 
-st.title(":blue[Visualizations]", divider='rainbow')
+st.title(":blue[Visualizations]")
 
 tab1, tab2, tab3, tab4= st.tabs(["Pairplot", "Correlation Heatmap", "Scatterplot", "Histogram"])
 
