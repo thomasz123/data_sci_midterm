@@ -8,6 +8,7 @@ import streamlit.components.v1 as components
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression, LogisticRegression
 from sklearn import metrics
+from sklearn.metrics import confusion_matrix
 import matplotlib.pyplot as plt
 
 tab1, tab2 = st.tabs(["Linear Regression", "Logistic Regression"])
@@ -140,6 +141,36 @@ with tab2:
     logmodel.fit(X_train, y_train)
     prediction = logmodel.predict(X_test)
     
-    # Scatter plot for the data points, color-coded by class
-    plt.scatter(X_train[y_train == 0][:, 0], X_train[y_train == 0][:, 1], color='cyan', label='Y = 0')
-    plt.scatter(X_train[y_train == 1][:, 0], X_train[y_train == 1][:, 1], color='purple', label='Y = 1')
+    # Create confusion matrix for plotting the comparison between true labels and predictions
+    cm = confusion_matrix(y_test, prediction)
+
+    # Create a barplot comparing actual 0s and 1s vs predicted 0s and 1s
+    true_counts = pd.Series(y_test).value_counts().sort_index()
+    pred_counts = pd.Series(prediction).value_counts().sort_index()
+
+    # Aligning the series for 0s and 1s to have the same indexes
+    true_counts = true_counts.reindex([0, 1], fill_value=0)
+    pred_counts = pred_counts.reindex([0, 1], fill_value=0)
+
+    # Plotting
+    labels = ['0', '1']
+    x = np.arange(len(labels))  # the label locations
+
+    fig, ax = plt.subplots(figsize=(8, 6))
+    width = 0.35  # the width of the bars
+
+    # Plot the bars
+    rects1 = ax.bar(x - width/2, true_counts, width, label='True')
+    rects2 = ax.bar(x + width/2, pred_counts, width, label='Predicted')
+
+    # Add some text for labels, title and custom x-axis tick labels, etc.
+    ax.set_xlabel('Class')
+    ax.set_ylabel('Count')
+    ax.set_title('Comparison of True vs Predicted Values for Logistic Regression')
+    ax.set_xticks(x)
+    ax.set_xticklabels(labels)
+    ax.legend()
+
+    # Display the plot
+    st.pyplot(fig)
+
