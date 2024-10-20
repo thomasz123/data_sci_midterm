@@ -66,13 +66,14 @@ with tab2:
     columns = df_logistic2.columns
     loginput = st.multiselect("Select variables:",columns,["dew"])
 
-    df_logistic2 = df_logistic[loginput]
+    
     
     #st.pyplot create a countplot to count the number of rainy and non rainy days
 
     if loginput == []:
         st.toast("Please Choose a Variable")
     else:
+        df_logistic2 = df_logistic[loginput]
         Xlog = df_logistic2
         ylog = df_logistic["precipitation"]
 
@@ -130,3 +131,4 @@ with tab2:
         # Display the plot
         st.pyplot(fig)
 
+n
