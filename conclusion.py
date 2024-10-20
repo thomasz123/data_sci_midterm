@@ -1,8 +1,9 @@
 import streamlit as st
 
 st.title(":blue[Conclusion]")
-st.subheader("stuff")
+st.subheader("Thoughts on dataset")
 "stuff about stuff"
-st.subheader("more stuff")
-"more stuff about more stuf"
+st.subheader("Accuracy of Predictions")
+"more stuff about more stuff"
 
+st.markdown("stuff")
