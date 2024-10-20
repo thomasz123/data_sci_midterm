@@ -22,15 +22,14 @@ with tab1:
     df2 = df.drop("temp", axis = 1)
     columns = df2.columns
     input = st.multiselect("Select variables:",columns,["dew"])
-    df2 = df2[input]
-    
-    X = df2
-    y = df["temp"]
 
     if input == []:
         st.toast("Please Choose a Variable")
 
     else:
+        df2 = df2[input]
+        X = df2
+        y = df["temp"]
         X_train, X_test, y_train, y_test = train_test_split(X,y,test_size = 0.2)
         lr = LinearRegression()
         lr.fit(X_train, y_train)
