@@ -130,4 +130,3 @@ with tab2:
         # Display the plot
         st.pyplot(fig)
 
-n
