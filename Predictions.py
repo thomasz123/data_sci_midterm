@@ -38,7 +38,7 @@ with tab1:
         #Print MAE and R2 values
         mae = metrics.mean_absolute_error(prediction, y_test)
         st.write("Mean Absolute Error:", mae)
-        r2 = metrics.r2_score(prediction,y_test)
+        r2 = metrics.r2_score(y_test,prediction)
         st.write("R2:", r2)
 
         #Linear Regression
