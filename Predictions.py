@@ -23,6 +23,22 @@ with tab1:
     columns = df2.columns
     input = st.multiselect("Select variables:",columns,["dew"])
 
+    #corr coefficients
+    feature_names = [f'Feature_{i}' for i in list(X.columns)]
+    df_X = pd.DataFrame(X, columns=feature_names)
+    # Coefficients represent the importance in linear regression
+    coefficients = lr.coef_
+
+    # Making the coefficients positive to compare magnitude
+    importance = np.abs(coefficients)
+
+    # Plotting feature importance with feature names
+    fig, ax = plt.subplots(figsize = (10,6))
+    plt.barh(feature_names, importance)
+    plt.xlabel('Absolute Coefficient Value')
+    plt.title('Feature Importance (Linear Regression)')
+    st.pyplot(fig)
+    
     if input == []:
         st.toast("Please Choose a Variable")
         st.warning("Please Choose a Variable")
@@ -41,22 +57,6 @@ with tab1:
         st.write("Mean Absolute Error:", mae)
         r2 = metrics.r2_score(y_test,prediction)
         st.write("R2:", r2)
-
-        #corr coefficients
-        feature_names = [f'Feature_{i}' for i in list(X.columns)]
-        df_X = pd.DataFrame(X, columns=feature_names)
-        # Coefficients represent the importance in linear regression
-        coefficients = lr.coef_
-
-        # Making the coefficients positive to compare magnitude
-        importance = np.abs(coefficients)
-
-        # Plotting feature importance with feature names
-        fig, ax = plt.subplots(figsize = (10,6))
-        plt.barh(feature_names, importance)
-        plt.xlabel('Absolute Coefficient Value')
-        plt.title('Feature Importance (Linear Regression)')
-        st.pyplot(fig)
 
         #Linear Regression
         with st.spinner('Loading scatterplot...'):
