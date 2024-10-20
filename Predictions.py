@@ -60,9 +60,7 @@ with tab2:
     df_logistic['precipitation'] = df_logistic['precip'].apply(lambda x: 1 if x > 0 else 0)
     
     df_logistic2 = df_logistic.drop(["precipitation", "precip"], axis = 1)
-
-    st.dataframe(df_logistic2)
-
+     
     columns = df_logistic2.columns
     loginput = st.multiselect("Select variables:",columns,["dew"])
 
