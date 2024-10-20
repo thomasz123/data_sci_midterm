@@ -23,6 +23,10 @@ with tab1:
     columns = df2.columns
     input = st.multiselect("Select variables:",columns,["dew"])
 
+    X = df
+    y = df["temp"]
+    X_train, X_test, y_train, y_test = train_test_split(X,y,test_size = 0.2)
+    lr = LinearRegression()
     #corr coefficients
     feature_names = [f'Feature_{i}' for i in list(X.columns)]
     df_X = pd.DataFrame(X, columns=feature_names)
@@ -38,7 +42,7 @@ with tab1:
     plt.xlabel('Absolute Coefficient Value')
     plt.title('Feature Importance (Linear Regression)')
     st.pyplot(fig)
-    
+
     if input == []:
         st.toast("Please Choose a Variable")
         st.warning("Please Choose a Variable")
