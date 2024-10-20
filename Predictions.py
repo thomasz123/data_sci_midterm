@@ -25,6 +25,7 @@ with tab1:
 
     if input == []:
         st.toast("Please Choose a Variable")
+        st.warning("Please Choose a Variable")
 
     else:
         df2 = df2[input]
@@ -71,6 +72,7 @@ with tab2:
 
     if loginput == []:
         st.toast("Please Choose a Variable")
+        st.warning("Please Choose a Variable")
     else:
         df_logistic2 = df_logistic[loginput]
         Xlog = df_logistic2
