@@ -129,16 +129,6 @@ with tab2:
         true_counts = pd.Series(ylog_test).value_counts().sort_index()
         pred_counts = pd.Series(logprediction).value_counts().sort_index()
 
-        idk = pd.value_counts(ylog_test).sort_index()
-        idk
-        pstuff = pd.value_counts(logprediction).sort_index()
-        pstuff
-
-
-        # Aligning the series for 0s and 1s to have the same indexes
-        true_counts = true_counts
-        pred_counts = pred_counts
-
         # Plotting
         labels = ['0', '1']
         x = np.arange(len(labels))  # the label locations
