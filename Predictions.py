@@ -18,8 +18,6 @@ tab1, tab2 = st.tabs(["Linear Regression", "Logistic Regression"])
 df = pd.read_csv("weather.csv")
 df = df.drop(["datetime"], axis = 1)  
 
-df
-
 with tab1:
     X = df.drop("temp", axis = 1)
     y = df["temp"]
