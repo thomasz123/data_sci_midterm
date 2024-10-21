@@ -115,12 +115,6 @@ with tab2:
         # Create confusion matrix for plotting the comparison between true labels and predictions
         cm = confusion_matrix(ylog_test, logprediction)
 
-        logprediction.shape
-        ylog_test.shape
-
-        logprediction
-        ylog_test
-        
         fig, ax = plt.subplots(figsize = (10,6))
         sns.heatmap(pd.DataFrame(cm), annot = True, cmap = "YlGnBu")
         plt.title("Confusion matrix",fontsize=25)
@@ -134,6 +128,9 @@ with tab2:
         # Create a barplot comparing actual 0s and 1s vs predicted 0s and 1s
         true_counts = pd.Series(ylog_test).value_counts().sort_index()
         pred_counts = pd.Series(logprediction).value_counts().sort_index()
+
+        pd.value_counts(ylog_test).sort_index()
+        pd.value_counts(logprediction).sort_index()
 
 
         # Aligning the series for 0s and 1s to have the same indexes
