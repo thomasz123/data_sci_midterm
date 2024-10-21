@@ -114,10 +114,7 @@ with tab2:
 
         # Create confusion matrix for plotting the comparison between true labels and predictions
         cm = confusion_matrix(ylog_test, logprediction)
-        cm
-        ylog_test
-        ylog_train.shape
-        ylog_train
+
 
         fig, ax = plt.subplots(figsize = (10,6))
         sns.heatmap(pd.DataFrame(cm), annot = True, cmap = "YlGnBu")
@@ -133,8 +130,6 @@ with tab2:
         true_counts = pd.Series(ylog_test).value_counts().sort_index()
         pred_counts = pd.Series(logprediction).value_counts().sort_index()
 
-        true_counts
-        pred_counts
 
         # Aligning the series for 0s and 1s to have the same indexes
         true_counts = true_counts.reindex([0, 1], fill_value=0)
