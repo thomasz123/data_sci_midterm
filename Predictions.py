@@ -130,6 +130,8 @@ with tab2:
         true_counts = pd.Series(ylog_test).value_counts().sort_index()
         pred_counts = pd.Series(logprediction).value_counts().sort_index()
 
+        true_counts
+
         # Aligning the series for 0s and 1s to have the same indexes
         true_counts = true_counts.reindex([0, 1], fill_value=0)
         pred_counts = pred_counts.reindex([0, 1], fill_value=0)
