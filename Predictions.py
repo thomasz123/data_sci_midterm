@@ -73,7 +73,7 @@ with tab1:
             plt.xlabel("Actual Temperatures",fontsize=18)
             plt.ylabel("Predicted Temperatures", fontsize=18)
             plt.scatter(x=y_test,y=prediction)
-            plt.plot(y_test, prediction, color ='k') 
+            plt.plot([min(y_test), max(y_test)], [min(y_test), max(y_test)], color='red', linewidth=2)
             st.pyplot(fig)
 
     #coefficient analysis
