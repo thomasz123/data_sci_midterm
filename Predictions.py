@@ -26,12 +26,13 @@ with tab1:
     X = df
     y = df["temp"]
     X_train, X_test, y_train, y_test = train_test_split(X,y,test_size = 0.2)
-    lrcoef = LinearRegression()
+    lr = LinearRegression()
+    lr.fit(X_train, y_train)
     #corr coefficients
     feature_names = [f'Feature_{i}' for i in list(X.columns)]
     df_X = pd.DataFrame(X, columns=feature_names)
     # Coefficients represent the importance in linear regression
-    coefficients = lrcoef.coef_
+    coefficients = lr.coef_
 
     # Making the coefficients positive to compare magnitude
     importance = np.abs(coefficients)
