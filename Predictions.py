@@ -136,8 +136,8 @@ with tab2:
 
 
         # Aligning the series for 0s and 1s to have the same indexes
-        true_counts = true_counts.reindex([0, 1], fill_value=0)
-        pred_counts = pred_counts.reindex([0, 1], fill_value=0)
+        true_counts = true_counts
+        pred_counts = pred_counts
 
         # Plotting
         labels = ['0', '1']
