@@ -126,6 +126,7 @@ with tab2:
         true_counts = pd.Series(ylog_test).value_counts().sort_index()
         pred_counts = pd.Series(logprediction).value_counts().sort_index()
 
+
         # Plotting
         labels = ['0', '1']
         x = np.arange(len(labels))  # the label locations
