@@ -30,7 +30,7 @@ with tab1:
     coeff_df = pd.DataFrame(lr.coef_, X.columns, columns=['Coefficient'])
     coeff_df
     #corr coefficients
-    feature_names = [f'Feature_{i}' for i in list(X.columns)]
+    feature_names = list(X.columns)
     df_X = pd.DataFrame(X, columns=feature_names)
     # Coefficients represent the importance in linear regression
     coefficients = lr.coef_
