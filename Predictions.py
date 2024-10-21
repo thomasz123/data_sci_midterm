@@ -24,6 +24,9 @@ with tab1:
     X_train, X_test, y_train, y_test = train_test_split(X,y,test_size = 0.2)
     lr = LinearRegression()
     lr.fit(X_train, y_train)
+
+    coeff_df = pd.DataFrame(lr.coef_, X.columns, columns=['Coefficient'])
+    coeff_df
     #corr coefficients
     feature_names = [f'Feature_{i}' for i in list(X.columns)]
     df_X = pd.DataFrame(X, columns=feature_names)
@@ -43,7 +46,7 @@ with tab1:
     df2 = df.drop("temp", axis = 1)
     columns = df2.columns
     input = st.multiselect("Select variables:",columns,["dew"])
-    
+
     if input == []:
         st.toast("Please Choose a Variable")
         st.warning("Please Choose a Variable")
