@@ -32,7 +32,6 @@ with tab1:
     # Coefficients represent the importance in linear regression
     coefficients = lr.coef_
 
-    st.write("testing")
     # Making the coefficients positive to compare magnitude
     importance = np.abs(coefficients)
 
