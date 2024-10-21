@@ -111,12 +111,11 @@ with tab2:
         logmodel = LogisticRegression()
         logmodel.fit(X_train_scaled, ylog_train)
         logprediction = logmodel.predict(X_test_scaled)
-        
-        logprediction.shape
 
         # Create confusion matrix for plotting the comparison between true labels and predictions
         cm = confusion_matrix(ylog_test, logprediction)
-        
+        cm
+
         fig, ax = plt.subplots(figsize = (10,6))
         sns.heatmap(pd.DataFrame(cm), annot = True, cmap = "YlGnBu")
         plt.title("Confusion matrix",fontsize=25)
