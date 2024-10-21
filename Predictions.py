@@ -118,7 +118,9 @@ with tab2:
         logprediction.shape
         ylog_test.shape
 
-
+        logprediction
+        ylog_test
+        
         fig, ax = plt.subplots(figsize = (10,6))
         sns.heatmap(pd.DataFrame(cm), annot = True, cmap = "YlGnBu")
         plt.title("Confusion matrix",fontsize=25)
