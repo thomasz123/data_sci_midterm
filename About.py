@@ -11,7 +11,7 @@ from sklearn import metrics
 import matplotlib.pyplot as plt
 
 with st.spinner('Loading page...'):
-    st.title(":blue[Tempature Prediction]")
+    st.title(":blue[ Paris Weather Prediction]")
     st.subheader("Weather data and analysis")
 
     image_path = Image.open("cloud.jpg") 
@@ -23,7 +23,7 @@ with st.spinner('Loading page...'):
     st.markdown('##### WHY THIS TOPIC❓')
     st.markdown('Accurate temperature prediction is critical for weather forecasting, agriculture, and various industries. Understanding the key factors influencing temperature helps in improving prediction accuracy, enhancing decision-making for farmers, city planners, and climate researchers.')
     st.markdown("##### OUR GOAL 🎯")
-    st.markdown("Our goal is to predict the temperature using multiple meteorological features and identify the most influential factors driving temperature changes. We focus on weather-related features like humidity, wind speed, pressure, and more, while aiming for an accurate forecast model.")
+    st.markdown("Our goal is to predict the weather in Paris using multiple meteorological features and identify the most influential factors driving temperature changes. We focus on weather-related features like humidity, wind speed, pressure, and more, while aiming for an accurate forecast model.")
 
     st.markdown('##### OUR DATA 📊')
     st.markdown("Our dataset contains historical weather data including variables such as temperature, humidity, wind speed, and atmospheric pressure. The dataset consists of thousands of daily observations from multiple weather stations.")
