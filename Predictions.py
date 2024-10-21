@@ -26,7 +26,6 @@ with tab1:
     lr.fit(X_train, y_train)
 
     coeff_df = pd.DataFrame(lr.coef_, X.columns, columns=['Coefficient'])
-    coeff_df
     #corr coefficients
     feature_names = list(X.columns)
     df_X = pd.DataFrame(X, columns=feature_names)
