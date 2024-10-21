@@ -115,6 +115,9 @@ with tab2:
         # Create confusion matrix for plotting the comparison between true labels and predictions
         cm = confusion_matrix(ylog_test, logprediction)
 
+        logprediction.shape
+        ylog_test.shape
+
 
         fig, ax = plt.subplots(figsize = (10,6))
         sns.heatmap(pd.DataFrame(cm), annot = True, cmap = "YlGnBu")
