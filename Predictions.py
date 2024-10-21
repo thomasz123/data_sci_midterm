@@ -131,7 +131,7 @@ with tab2:
 
         idk = pd.value_counts(ylog_test).sort_index()
         idk
-        pstuff = d.value_counts(logprediction).sort_index()
+        pstuff = pd.value_counts(logprediction).sort_index()
         pstuff
 
 
