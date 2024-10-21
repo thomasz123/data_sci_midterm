@@ -112,7 +112,7 @@ with tab2:
         logmodel.fit(X_train_scaled, ylog_train)
         logprediction = logmodel.predict(X_test_scaled)
         
-        logprediction.shape()
+        logprediction.shape
 
         # Create confusion matrix for plotting the comparison between true labels and predictions
         cm = confusion_matrix(ylog_test, logprediction)
