@@ -75,7 +75,7 @@ with tab1:
             plt.xlabel("Actual Temperatures",fontsize=18)
             plt.ylabel("Predicted Temperatures", fontsize=18)
             plt.scatter(x=y_test,y=prediction)
-
+            plt.plot(X_test, prediction, color ='red') 
             st.pyplot(fig)
 
     #coefficient analysis
