@@ -19,10 +19,6 @@ df = pd.read_csv("weather.csv")
 df = df.drop(["datetime"], axis = 1)  
 
 with tab1:
-    df2 = df.drop("temp", axis = 1)
-    columns = df2.columns
-    input = st.multiselect("Select variables:",columns,["dew"])
-
     X = df
     y = df["temp"]
     X_train, X_test, y_train, y_test = train_test_split(X,y,test_size = 0.2)
@@ -44,6 +40,10 @@ with tab1:
     plt.title('Feature Importance (Linear Regression)')
     st.pyplot(fig)
 
+    df2 = df.drop("temp", axis = 1)
+    columns = df2.columns
+    input = st.multiselect("Select variables:",columns,["dew"])
+    
     if input == []:
         st.toast("Please Choose a Variable")
         st.warning("Please Choose a Variable")
