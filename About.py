@@ -17,8 +17,6 @@ with st.spinner('Loading page...'):
     image_path = Image.open("cloud.jpg") 
     st.image(image_path)
 
-    st.write("Details about our project, explanation of database, etc")
-
     df = pd.read_csv("weather.csv")
     df = df.drop(["datetime","temp"], axis = 1)  
 
