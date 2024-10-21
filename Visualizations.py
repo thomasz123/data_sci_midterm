@@ -9,6 +9,12 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn import metrics
 import matplotlib.pyplot as plt
+import time
+
+
+bar = st.progress(50)
+time.sleep(3)
+bar.progress(100)
 
 df = pd.read_csv("weather.csv")
 df = df.drop("datetime", axis = 1)
